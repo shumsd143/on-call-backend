@@ -43,6 +43,7 @@ class User(AbstractBaseUser):
         unique=True,
     )
     phone = PhoneNumberField(null=False, blank=False, unique=True)
+    password = models.CharField(null=False,blank=False,max_length=100)
     objects = UserManager()
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False)
